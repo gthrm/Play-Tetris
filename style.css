@@ -34,5 +34,5 @@ body {
 }
 
 .tetris_item, .set_item {
-    background-color: #EF7B10
+    background-color: rgba(239, 124, 16, 0.61);
 }
