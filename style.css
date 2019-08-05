@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #161A25;
+    height: 100vh;
+}
+
+.main {
+    position: relative;
+    border: 1px solid #EF7B10;
+}
+
+.tetris_window {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    bottom: 0;
+}
+
+.tetris_bit {
+    border: 1px solid rgba(255, 194, 136, 0.205);
+}
+
+.tetris_item, .set_item {
+    background-color: #EF7B10
+}
