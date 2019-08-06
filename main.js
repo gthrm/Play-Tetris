@@ -1,9 +1,8 @@
 const width = document.body.offsetWidth / 1.5;
 const height = 700 * width / 500;
-
 const itemLength = width / 10;
-
-const numItems = width / itemLength * height / itemLength;
+const itemsToHeight = height / itemLength;
+const numItems = Math.round(width / itemLength * 9 * height / 7 / itemLength);
 
 const main = document.querySelector(".main");
 main.style.width = width + "px";
@@ -12,7 +11,7 @@ main.style.height = height + "px";
 const tetris_window = document.createElement("div");
 tetris_window.classList.add("tetris_window");
 tetris_window.style.width = width + "px";
-tetris_window.style.height = height + "px";
+tetris_window.style.height = 9 * height / 7 + "px";
 
 
 
@@ -28,7 +27,7 @@ main.appendChild(tetris_window);
 
 let tetris_bit_i = 0;
 const tetris_bit = document.getElementsByClassName("tetris_bit");
-for (let y = height / itemLength; y > 0; y--) {
+for (let y = Math.round(9/7*height / itemLength); y > 0; y--) {
     for (let x = 1; x < width / itemLength + 1; x++) {
         tetris_bit[tetris_bit_i].setAttribute("positionX", x);
         tetris_bit[tetris_bit_i].setAttribute("positionY", y);
@@ -36,7 +35,7 @@ for (let y = height / itemLength; y > 0; y--) {
     }
 }
 
-const initialX = 5, initialY = 10;
+const initialX = 5, initialY = 15;
 let mainElements = [
     [[0, 1], [0, 2], [0, 3]], //long
     [[1, 0], [0, 1], [1, 1]], //square
@@ -112,4 +111,4 @@ createElement();
 
 // let interval = setInterval(() => {
 //     move()
-// }, 800);
+// }, 300);
